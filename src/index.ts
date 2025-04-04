@@ -1,36 +1,40 @@
-// src/index.ts
-import express from 'express';
-import http from 'http';
-import cors from 'cors';
-import dotenv from 'dotenv';
-import authRoutes from './routes/authRoutes';
-import configureSocket from './config/socket';
+// import express from 'express';
+// import http from 'http';
+// import cors from 'cors';
+import dotenv from "dotenv";
+import SocketServer from "./models/SocketServer";
+
+// import configureSocket from './config/socket';
 
 // Configurar variables de entorno
 dotenv.config();
 
-const app = express();
-const PORT = process.env.PORT || 5000;
+const socketServer = new SocketServer();
 
-// Middleware
-app.use(cors());
-app.use(express.json());
+socketServer.execute();
 
-// Rutas
-app.use('/api', authRoutes);
+// const app = express();
+// const PORT = process.env.PORT || 5000;
 
-// Ruta de prueba
-app.get('/', (_req, res) => {
-  res.send('API del Sistema de Control de Asistencia - I.E. 20935 Asunción 8');
-});
+// // Middleware
+// app.use(cors());
+// app.use(express.json());
 
-// Crear servidor HTTP
-const server = http.createServer(app);
+// // Rutas
+// app.use('/api', authRoutes);
 
-// Configurar Socket.io
-configureSocket(server);
+// // Ruta de prueba
+// app.get('/', (_req, res) => {
+//   res.send('API del Sistema de Control de Asistencia - I.E. 20935 Asunción 8');
+// });
 
-// Iniciar servidor
-server.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// // Crear servidor HTTP
+// const server = http.createServer(app);
+
+// // Configurar Socket.io
+// configureSocket(server);
+
+// // Iniciar servidor
+// server.listen(PORT, () => {
+//   console.log(`Server is running on port ${PORT}`);
+// });

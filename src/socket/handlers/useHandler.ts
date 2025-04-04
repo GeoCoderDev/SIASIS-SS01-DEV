@@ -11,6 +11,7 @@
 // // Tiempo de tolerancia en segundos para respuestas a solicitudes
 // const SEGUNDOS_TOLERANCIA = 5.5;
 
+
 // /**
 //  * Manejador de eventos relacionados con usuarios
 //  */
