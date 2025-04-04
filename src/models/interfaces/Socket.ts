@@ -2,7 +2,7 @@
 import { DefaultEventsMap, Socket as SocketIO } from "socket.io";
 import { Server } from "socket.io";
 
-import { IUser } from "./User";
+// import { IUser } from "./User";
 
 // Extiende el objeto Socket para incluir datos de usuario
 export interface CustomSocket
@@ -12,7 +12,7 @@ export interface CustomSocket
     role: string;
     username?: string;
   };
-  userData?: IUser;
+  // userData?: IUser;
 }
 
 // Extiende el objeto Server para agregar métodos personalizados si es necesario
