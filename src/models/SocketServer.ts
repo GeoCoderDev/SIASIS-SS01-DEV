@@ -30,7 +30,6 @@ class SocketServer {
         methods: ["GET", "POST"],
       },
     });
-
   }
 
   middlewares() {
